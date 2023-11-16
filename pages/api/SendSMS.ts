@@ -14,9 +14,9 @@ export default function handler(
 ) {
     console.log(req.body)
     res.status(200).json({ 
-        AggregatesSendSMS: req.body.Emails?.lenght,
+        AggregatesSendSMS: req.body.Emails ? req.body.Emails.lenght : 0,
         GroupId: 0,
-        Timestamp: new Date().getTime(),
-        TotalSendSMS: req.body.Emails?.lenght
+        Timestamp: new Date().toLocaleString(),
+        TotalSendSMS: 1
     })
 }
