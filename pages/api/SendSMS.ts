@@ -12,7 +12,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-    console.log(req.body)
+    console.log(req)
     res.status(200).json({ 
         AggregatesSendSMS: 1,
         GroupId: 0,
