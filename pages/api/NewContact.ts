@@ -11,9 +11,7 @@ export default function handler(
 ) {
     console.log(req.body)
 
-    if (req.body.Emails) {
-        res.status(200).json({ 
-            EmailId: Math.round(Math.random() * 10000),
-        })
-    }
+    res.status(200).json({ 
+        EmailId: Math.round(Math.random() * 10000),
+    })
 }
