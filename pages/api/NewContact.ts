@@ -13,7 +13,7 @@ export default function handler(
 
     if (req.body.Emails) {
         res.status(200).json({ 
-            EmailId: Math.random() * 10000,
+            EmailId: Math.round(Math.random() * 10000),
         })
     }
 }
