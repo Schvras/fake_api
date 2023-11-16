@@ -13,10 +13,20 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
     console.log(req.body)
-    res.status(200).json({ 
-        AggregatesSendSMS: 1,
-        GroupId: 0,
-        Timestamp: new Date().toLocaleString(),
-        TotalSendSMS: 1
-    })
+
+    if (req.body.Emails) {
+        res.status(200).json({ 
+            AggregatesSendSMS: 1,
+            GroupId: 0,
+            Timestamp: new Date().toLocaleString(),
+            TotalSendSMS: 1
+        })
+    }else{
+        res.status(200).json({ 
+            AggregatesSendSMS: 0,
+            GroupId: 0,
+            Timestamp: new Date().toLocaleString(),
+            TotalSendSMS: 0
+        })
+    }
 }
